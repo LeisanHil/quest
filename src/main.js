@@ -1,4 +1,3 @@
-import './styles.css';
 import { quest } from './quest-data.js';
 
 const app = document.querySelector('#app');
