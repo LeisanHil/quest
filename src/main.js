@@ -13,7 +13,7 @@ const feedback = (text, bad = false) => { const node = document.querySelector('.
 const backHome = '<button class="back-home" data-action="home">← О квесте</button>';
 
 function landing() {
-  app.innerHTML = card(`<div class="barcelona-arch" aria-hidden="true"><i></i></div><div class="star">♥</div><h1>Может, прогуляемся?</h1><p class="landing-copy">Небольшое городское приключение: разгадывай подсказки, находи места и открывай следующий секрет.</p><button class="primary" data-action="enter">Начать приключение <b>→</b></button><p class="note">Для прохождения понадобится телефон с интернетом и включённой геолокацией.</p>`);
+  app.innerHTML = card(`<div class="barcelona-arch" aria-hidden="true"><i></i></div><div class="star">♥</div><h1>Может, прогуляемся?</h1><p class="landing-copy">Тебя ждёт небольшое приключение: разгадывай подсказки, находи места и открывай следующий секрет.</p><button class="primary" data-action="enter">Начать квест <b>→</b></button><p class="note">Для прохождения понадобится телефон с интернетом и включённой геолокацией.</p>`);
 }
 function rules() {
   app.innerHTML = card(`${backHome}<p class="eyebrow">перед началом</p><h2>Несколько честных правил</h2><ol><li>Иди по порядку: следующая подсказка откроется после предыдущей.</li><li>Гуглить можно — иногда это часть поиска.</li><li><strong>Не пользуйся искусственным интеллектом.</strong> Этот квест — для твоих открытий.</li><li><strong>Не подглядывай в код страницы.</strong> Там только техническая магия.</li><li>Разреши геолокацию, когда сайт попросит: она подтвердит нужное место.</li></ol><button class="primary" data-action="start">Окей, поняла <b>→</b></button>`, true);

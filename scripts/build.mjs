@@ -21,5 +21,6 @@ await mkdir(outputRoot, { recursive: true });
 await copyFile(new URL('../index.html', import.meta.url), new URL('./index.html', outputRoot));
 await copyDirectory(new URL('../src/', import.meta.url).pathname, new URL('./src/', outputRoot).pathname);
 await copyDirectory(new URL('../quest/', import.meta.url).pathname, new URL('./quest/', outputRoot).pathname);
+await copyDirectory(new URL('../public/', import.meta.url).pathname, new URL('./public/', outputRoot).pathname);
 
 console.log(`Static site built in ${outputRoot.pathname}`);
