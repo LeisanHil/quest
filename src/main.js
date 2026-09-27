@@ -35,7 +35,7 @@ function final() {
 function previousButton() { return state.step ? '<button class="history-button" data-action="history">Посмотреть предыдущие загадки</button>' : ''; }
 function step() {
   const s = quest.stages[state.step];
-  if (!state.riddle) app.innerHTML = card(`${backHome}<p class="eyebrow">следующая загадка</p><h2>${s.riddleTitle}</h2><p class="riddle">${s.riddle}</p>${form('riddle', 'Напиши, что ты думаешь', 'Проверить ответ')}${previousButton()}`);
+  if (!state.riddle) app.innerHTML = card(`${backHome}<article class="riddle-sheet riddle-sheet--${state.step}" aria-label="Загадка"><p class="riddle riddle--poem">${s.riddle}</p></article>${form('riddle', 'Напиши, что ты думаешь', 'Проверить ответ')}${previousButton()}`, true);
   else if (!state.place) app.innerHTML = card(`${backHome}<p class="eyebrow">место найдено?</p><h2>${s.locationPrompt}</h2><p class="lead">Когда окажешься на месте, подтверди его. Радиус проверки — ${s.radiusMeters} метров.</p><button class="primary" data-action="location">Я на месте <b>⌖</b></button><p class="feedback"></p><p class="note">Геолокация используется только в браузере и никуда не отправляется.</p><button class="reset" data-action="riddle">← Вернуться к загадке</button>${previousButton()}`);
   else app.innerHTML = card(`${backHome}<p class="eyebrow">ты на нужной точке ✦</p><h2>Последний штрих</h2><p class="riddle">${s.locationQuestion}</p>${form('code', 'Введи ответ', 'Открыть дальше')}<button class="reset" data-action="riddle">← Вернуться к загадке</button>${previousButton()}`);
 }

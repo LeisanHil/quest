@@ -21,3 +21,47 @@ li::before { position: absolute; top: 2px; left: 0; }
   .app-shell:not(.app-shell--landing) { display: flex; align-items: flex-start; justify-content: center; }
   .card { padding: 32px 23px; }
 }
+
+/* A found poem should feel like a physical clue, not a screen heading. */
+.riddle-sheet {
+  position: relative;
+  margin: 10px auto 29px;
+  padding: 35px 22px 32px;
+  color: #442d20;
+  background:
+    radial-gradient(circle at 8% 3%, rgb(150 91 37 / 16%), transparent 35%),
+    radial-gradient(circle at 93% 97%, rgb(139 82 35 / 18%), transparent 38%),
+    repeating-linear-gradient(0deg, transparent 0 4px, rgb(102 67 39 / 2%) 5px 6px),
+    linear-gradient(135deg, #f5e6c4, #e8cf9f 58%, #ddbb87);
+  border: 1px solid #c49a65;
+  box-shadow: 0 2px 1px rgb(13 8 6 / 28%), 0 17px 28px rgb(9 6 4 / 35%), inset 0 0 0 5px rgb(255 250 228 / 22%), inset 0 0 20px rgb(117 73 35 / 18%);
+  transform: rotate(-.35deg);
+}
+.riddle-sheet::before,
+.riddle-sheet::after {
+  display: block;
+  color: #a87948;
+  content: '✦  ─────  ✦';
+  font: 11px Georgia, serif;
+  letter-spacing: .18em;
+}
+.riddle-sheet::before { margin-bottom: 24px; }
+.riddle-sheet::after { margin-top: 24px; }
+.riddle--poem {
+  max-width: none;
+  margin: 0;
+  color: #422b21;
+  font: 600 clamp(17px, 2.3vw, 22px)/1.7 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.025em;
+  text-align: center;
+  white-space: pre-line;
+}
+@media (max-width: 430px) {
+  .card:has(.riddle-sheet) { padding: 24px 12px 30px; }
+  .card:has(.riddle-sheet) .back-home { margin-bottom: 20px; }
+  .riddle-sheet { padding: 30px 12px 28px; }
+  .riddle--poem { font-size: 17px; line-height: 1.55; }
+  .riddle-sheet--1 .riddle--poem { font-size: 15px; }
+  .riddle-sheet--3 .riddle--poem { font-size: 16px; }
+  .card:has(.riddle-sheet) form { padding: 0 12px; }
+}
