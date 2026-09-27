@@ -32,44 +32,56 @@
 }
 
 .landing-action {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 26px;
+  justify-content: center;
+  gap: 16px;
   width: min(100%, 320px);
-  min-height: 62px;
+  min-height: 68px;
   margin-top: 31px;
-  padding: 7px 8px 7px 24px;
-  color: #52221f;
-  background: linear-gradient(120deg, #fff2d3, #eacb96);
-  border: 1px solid #f9e3b5;
-  border-radius: 999px;
-  box-shadow: 0 0 0 4px rgb(255 233 190 / 18%), 0 15px 35px rgb(15 9 7 / 48%);
+  padding: 10px 20px;
+  color: #fff1d4;
+  background: linear-gradient(135deg, #63272b, #30191b 72%);
+  border: 1px solid #d9b577;
+  border-radius: 3px;
+  box-shadow: 0 14px 32px rgb(15 9 7 / 52%), inset 0 1px rgb(255 231 182 / 18%);
   cursor: pointer;
-  font: 700 1rem "Libre Baskerville", Georgia, serif;
+  font: 700 1.05rem "Libre Baskerville", Georgia, serif;
   text-shadow: none;
-  transition: transform .18s ease, box-shadow .18s ease;
+  transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.landing-action::before {
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgb(232 196 137 / 38%);
+  content: '';
+  pointer-events: none;
 }
 
 .landing-action:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 0 5px rgb(255 233 190 / 24%), 0 20px 38px rgb(15 9 7 / 55%);
+  background: linear-gradient(135deg, #793239, #412024 72%);
+  box-shadow: 0 19px 38px rgb(15 9 7 / 60%), inset 0 1px rgb(255 231 182 / 22%);
 }
 
 .landing-action:focus-visible { outline: 3px solid #fff0cc; outline-offset: 6px; }
 
-.landing-action__seal {
+.landing-action__mark {
+  color: #deb978;
+  font: 1.1rem Georgia, serif;
+}
+
+.landing-action__arrow {
   display: grid;
-  flex: 0 0 44px;
-  width: 44px;
-  height: 44px;
+  width: 37px;
+  height: 30px;
+  margin-left: auto;
   place-items: center;
-  color: #f9e5bc;
-  background: radial-gradient(circle at 35% 30%, #bd4a3f, #7b1d25 70%);
-  border: 1px solid #c38862;
-  border-radius: 50%;
-  box-shadow: inset 0 1px 3px rgb(255 218 166 / 48%), 0 3px 8px rgb(51 14 17 / 32%);
-  font: 700 1.35rem Georgia, serif;
+  color: #f5dba6;
+  border-left: 1px solid rgb(232 196 137 / 45%);
+  font: 1.5rem Georgia, serif;
 }
 
 @media (min-width: 700px) {

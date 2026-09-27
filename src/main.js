@@ -19,9 +19,10 @@ function landing() {
   app.innerHTML = `<section class="landing-hero" aria-labelledby="landing-title">
     <p class="landing-kicker">Полина, есть одно дело…</p>
     <h1 id="landing-title">Может,<br>прогуляемся?</h1>
-    <button class="landing-action" data-action="enter" aria-label="Начать квест — открыть дело">
-      <span>Открыть дело</span>
-      <span class="landing-action__seal" aria-hidden="true">↗</span>
+    <button class="landing-action" data-action="enter">
+      <span class="landing-action__mark" aria-hidden="true">✦</span>
+      <span class="landing-action__label">Начать квест</span>
+      <span class="landing-action__arrow" aria-hidden="true">→</span>
     </button>
   </section>`;
 }
