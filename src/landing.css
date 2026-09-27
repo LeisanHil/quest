@@ -1,9 +1,70 @@
-.app-shell {
+.app-shell--landing {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 32px max(24px, env(safe-area-inset-right)) max(34px, env(safe-area-inset-bottom));
   background:
-    linear-gradient(180deg, rgb(18 12 10 / 40%), rgb(20 13 11 / 85%)),
-    url('/public/barcelona-gothic-dusk.png') center / cover no-repeat;
+    linear-gradient(180deg, rgb(21 13 10 / 5%) 0%, rgb(21 13 10 / 3%) 35%, rgb(21 13 10 / 50%) 64%, rgb(17 10 9 / 93%) 100%),
+    url('../public/polina-detective-barcelona.jpg') center 39% / cover no-repeat;
 }
 
-.app-shell::before { opacity: .12; }
+.app-shell--landing::before,
+.app-shell--landing .glow { display: none; }
 
-.card { background: linear-gradient(130deg, rgb(34 22 16 / 68%), rgb(17 12 10 / 74%)); }
+.landing-hero {
+  width: min(100%, 520px);
+  color: #fff3dc;
+  text-align: left;
+  text-shadow: 0 2px 16px rgb(17 10 9 / 75%);
+}
+
+.landing-kicker {
+  margin: 0 0 11px;
+  color: #f0c884;
+  font: 600 .76rem "DM Mono", monospace;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+}
+
+.landing-hero h1 {
+  font-size: clamp(4.1rem, 16vw, 6.5rem);
+  line-height: .82;
+}
+
+.landing-copy {
+  max-width: 25rem;
+  margin: 20px 0 24px;
+  color: #fff0d9;
+  font: 1rem/1.55 "Libre Baskerville", Georgia, serif;
+}
+
+.landing-action {
+  width: min(100%, 320px);
+  justify-content: space-between;
+  padding-inline: 20px;
+  text-shadow: none;
+}
+
+.landing-action b { font-size: 1.25rem; line-height: 1; }
+
+.landing-note {
+  margin: 15px 0 0;
+  color: #e5cfb4;
+  font-size: .74rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 700px) {
+  .app-shell--landing {
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8vw;
+    background-position: center, center 42%;
+  }
+}
+
+@media (max-width: 430px) {
+  .app-shell--landing { padding: 28px 25px max(32px, env(safe-area-inset-bottom)); }
+  .landing-hero h1 { font-size: clamp(3.7rem, 15.4vw, 4.6rem); }
+  .landing-action { width: 100%; }
+}

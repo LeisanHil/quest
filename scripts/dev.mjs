@@ -26,13 +26,14 @@ const server = createServer(async (request, response) => {
 
   try {
     const info = await stat(filename);
-    if (!info.isFile()) throw new Error('Not a file');
-    response.writeHead(200, { 'Content-Type': mimeTypes[extname(filename)] ?? 'application/octet-stream' });
-    createReadStream(filename).pipe(response);
+    const page = info.isDirectory() ? join(filename, 'index.html') : filename;
+    if (!(await stat(page)).isFile()) throw new Error('Not a file');
+    response.writeHead(200, { 'Content-Type': mimeTypes[extname(page)] ?? 'application/octet-stream', 'Cache-Control': 'no-store' });
+    createReadStream(page).pipe(response);
   } catch {
     try {
       await access(join(siteRoot, 'index.html'));
-      response.writeHead(200, { 'Content-Type': mimeTypes['.html'] });
+      response.writeHead(200, { 'Content-Type': mimeTypes['.html'], 'Cache-Control': 'no-store' });
       createReadStream(join(siteRoot, 'index.html')).pipe(response);
     } catch {
       response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
