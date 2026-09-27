@@ -30,14 +30,14 @@ function rules() {
   app.innerHTML = card(`${backHome}<p class="eyebrow">перед началом</p><h2>Немножко правил</h2><ol><li>Иди по порядку: следующая подсказка откроется после предыдущей.</li><li>Гуглить можно — это часть процесса.</li><li><strong>Не пользуйся искусственным интеллектом.</strong></li><li><strong>Не подглядывай в код страницы.</strong></li><li>Разреши геолокацию, когда сайт попросит: она подтвердит нужное место.</li></ol><button class="landing-action rules-action" data-action="start"><span class="landing-action__mark" aria-hidden="true">✦</span><span class="landing-action__label">Окей, поняла</span><span class="landing-action__arrow" aria-hidden="true">→</span></button>`, true);
 }
 function final() {
-  app.innerHTML = card(`${backHome}<p class="eyebrow">финал квеста</p><div class="star">♥</div><h1>${quest.final.title}</h1><p class="lead">${quest.final.message}</p>${quest.final.prizeUrl ? `<a class="primary" href="${quest.final.prizeUrl}" target="_blank" rel="noopener">Открыть подарок <b>↗</b></a>` : '<p class="note">Подарок появится здесь совсем скоро.</p>'}<button class="reset" data-action="restart">Пройти квест ещё раз</button>`);
+  app.innerHTML = card(`${backHome}<div class="star" aria-hidden="true">♥</div><h1>${quest.final.title}</h1><p class="lead">${quest.final.message}</p>${quest.final.prizeUrl ? `<a class="primary" href="${quest.final.prizeUrl}" target="_blank" rel="noopener">Открыть подарок <b>↗</b></a>` : '<p class="note">Подарок появится здесь совсем скоро.</p>'}`);
 }
 function previousButton() { return state.step ? '<button class="history-button" data-action="history">Посмотреть предыдущие загадки</button>' : ''; }
 function step() {
   const s = quest.stages[state.step];
   if (!state.riddle) app.innerHTML = card(`${backHome}<article class="riddle-sheet riddle-sheet--${state.step}" aria-label="Загадка"><p class="riddle riddle--poem">${s.riddle}</p></article>${form('riddle', 'Напиши, что ты думаешь', 'Проверить ответ')}${previousButton()}`, true);
   else if (!state.place) app.innerHTML = card(`${backHome}<p class="eyebrow">место найдено?</p><h2>${s.locationPrompt}</h2><p class="lead">Когда окажешься на месте, подтверди его. Радиус проверки — ${s.radiusMeters} метров.</p><button class="primary" data-action="location">Я на месте <b>⌖</b></button><p class="feedback"></p><p class="note">Геолокация используется только в браузере и никуда не отправляется.</p><button class="reset" data-action="riddle">← Вернуться к загадке</button>${previousButton()}`);
-  else app.innerHTML = card(`${backHome}<p class="eyebrow">ты на нужной точке ✦</p><h2>Последний штрих</h2><p class="riddle">${s.locationQuestion}</p>${form('code', 'Введи ответ', 'Открыть дальше')}<button class="reset" data-action="riddle">← Вернуться к загадке</button>${previousButton()}`);
+  else app.innerHTML = card(`${backHome}<p class="eyebrow">ты на нужной точке ✦</p><h2>Кодовый вопрос</h2><p class="riddle">${s.locationQuestion}</p>${form('code', 'Введи ответ', 'Идём дальше')}<button class="reset" data-action="riddle">← Вернуться к загадке</button>${previousButton()}`);
 }
 function renderHistory() {
   const seen = quest.stages.slice(0, state.step);
