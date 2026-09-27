@@ -7,32 +7,32 @@ export const quest = {
   final: {
     title: 'Ты справилась!',
     message: 'Твой подарок уже ждёт. Открывай его — и пусть этот день запомнится надолго.',
-    prizeUrl: '#'
+    prizeUrl: ''
   },
   stages: [
     {
-      riddleTitle: 'Первая остановка', riddle: 'Здесь появится первая загадка.', riddleAnswers: ['ответ 1'],
-      latitude: null, longitude: null, radiusMeters: 80,
+      riddleTitle: 'Первая остановка', riddle: 'Этот дом не просит верить в чудеса:\nТам роза помнит кровь, которой не видала.\nРукоять с крестом застыла над броней —\nКак знак того, что сказка здесь бывала.', riddleAnswers: ['Casa Batlló', 'Casa Batllo'],
+      latitude: 41.3917053, longitude: 2.1649938, radiusMeters: 80,
       locationPrompt: 'Ты разгадала место? Иди туда и подтверди, что ты на месте.',
-      locationQuestion: 'Здесь появится вопрос-код для первой точки.', codeAnswers: ['код 1']
+      locationQuestion: 'Сколько балконов на главном фасаде?', codeAnswers: ['9', 'девять']
     },
     {
-      riddleTitle: 'Вторая остановка', riddle: 'Здесь появится вторая загадка.', riddleAnswers: ['ответ 2'],
-      latitude: null, longitude: null, radiusMeters: 80,
+      riddleTitle: 'Вторая остановка', riddle: 'Пусть Сан Жорди укажет тебе путь\nТуда, где кров каноников хранил правителей покой.\nНад тесной улицей найдёшь воздушный путь —\nУченик его возвел своей рукой.', riddleAnswers: ['Pont del Bisbe', 'Понт-дель-Бисбе'],
+      latitude: 41.383301, longitude: 2.176436, radiusMeters: 80,
       locationPrompt: 'Нашла вторую точку? Подтверди своё местоположение.',
-      locationQuestion: 'Здесь появится вопрос-код для второй точки.', codeAnswers: ['код 2']
+      locationQuestion: 'Две буквы на мосту, обозначающие начало и конец.', codeAnswers: ['α и ω', 'α ω', 'альфа и омега', 'alpha omega']
     },
     {
-      riddleTitle: 'Третья остановка', riddle: 'Здесь появится третья загадка.', riddleAnswers: ['ответ 3'],
-      latitude: null, longitude: null, radiusMeters: 80,
+      riddleTitle: 'Третья остановка', riddle: 'Три века спустя — четыре тысячи сердец,\nВнесли свой миг свободы, наконец.\nА врач-писатель оставил нам ответ:\nЧто громче пушки, хоть и звука нет?', riddleAnswers: ['El muro del beso', 'Муро-дель-Бесо', 'Стена поцелуев'],
+      latitude: 41.383421, longitude: 2.176941, radiusMeters: 80,
       locationPrompt: 'Ты близко. Подтверди, что ты у третьей точки.',
-      locationQuestion: 'Здесь появится вопрос-код для третьей точки.', codeAnswers: ['код 3']
+      locationQuestion: 'Сколько слов в цитате?', codeAnswers: ['20', 'двадцать']
     },
     {
-      riddleTitle: 'Финальная остановка', riddle: 'Здесь появится последняя загадка.', riddleAnswers: ['ответ 4'],
-      latitude: null, longitude: null, radiusMeters: 80,
+      riddleTitle: 'Финальная остановка', riddle: 'Много историй хранит она,\nНо правдивее всех та,\nКак среди соседей шутка одна,\nСтала местом любви навсегда.\n\nЗдесь встречи скрывала ночная тишина,\nЗдесь тайны и поцелуи хранила она.\nИ здесь перед смертью, в последний свой час,\nС родными прощались в последний раз.', riddleAnswers: ['Carrer dels Petons', 'Carrer del Petons', 'Улица поцелуев'],
+      latitude: 41.3861, longitude: 2.1842, radiusMeters: 80,
       locationPrompt: 'Последняя точка найдена? Подтверди это.',
-      locationQuestion: 'Здесь появится финальный вопрос-код.', codeAnswers: ['код 4']
+      locationQuestion: 'Числовой палиндром этой улицы.', codeAnswers: ['646']
     }
   ]
 };
