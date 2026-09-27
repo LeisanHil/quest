@@ -84,6 +84,33 @@
   font: 1.5rem Georgia, serif;
 }
 
+.rules-action { width: min(100%, 320px); margin-top: 0; }
+
+.primary {
+  position: relative;
+  min-height: 62px;
+  color: #fff1d4;
+  background: linear-gradient(135deg, #63272b, #30191b 72%);
+  border: 1px solid #d9b577;
+  border-radius: 3px;
+  box-shadow: 0 14px 32px rgb(15 9 7 / 52%), inset 0 1px rgb(255 231 182 / 18%);
+}
+.primary::before {
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgb(232 196 137 / 38%);
+  content: '';
+  pointer-events: none;
+}
+.primary:hover { background: linear-gradient(135deg, #793239, #412024 72%); }
+.primary b {
+  margin-left: 6px;
+  padding-left: 12px;
+  color: #f5dba6;
+  border-left: 1px solid rgb(232 196 137 / 45%);
+  font: 1.4rem Georgia, serif;
+}
+
 @media (min-width: 700px) {
   .app-shell--landing {
     align-items: center;
