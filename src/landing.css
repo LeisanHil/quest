@@ -5,7 +5,7 @@
   padding: 32px max(24px, env(safe-area-inset-right)) max(34px, env(safe-area-inset-bottom));
   background:
     linear-gradient(180deg, rgb(21 13 10 / 5%) 0%, rgb(21 13 10 / 3%) 35%, rgb(21 13 10 / 50%) 64%, rgb(17 10 9 / 93%) 100%),
-    url('../public/polina-detective-barcelona.jpg') center 39% / cover no-repeat;
+    url('../public/polina-detective-street.jpg') center 39% / cover no-repeat;
 }
 
 .app-shell--landing::before,
@@ -31,27 +31,45 @@
   line-height: .82;
 }
 
-.landing-copy {
-  max-width: 25rem;
-  margin: 20px 0 24px;
-  color: #fff0d9;
-  font: 1rem/1.55 "Libre Baskerville", Georgia, serif;
-}
-
 .landing-action {
-  width: min(100%, 320px);
+  display: inline-flex;
+  align-items: center;
   justify-content: space-between;
-  padding-inline: 20px;
+  gap: 26px;
+  width: min(100%, 320px);
+  min-height: 62px;
+  margin-top: 31px;
+  padding: 7px 8px 7px 24px;
+  color: #52221f;
+  background: linear-gradient(120deg, #fff2d3, #eacb96);
+  border: 1px solid #f9e3b5;
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgb(255 233 190 / 18%), 0 15px 35px rgb(15 9 7 / 48%);
+  cursor: pointer;
+  font: 700 1rem "Libre Baskerville", Georgia, serif;
   text-shadow: none;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
-.landing-action b { font-size: 1.25rem; line-height: 1; }
+.landing-action:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 5px rgb(255 233 190 / 24%), 0 20px 38px rgb(15 9 7 / 55%);
+}
 
-.landing-note {
-  margin: 15px 0 0;
-  color: #e5cfb4;
-  font-size: .74rem;
-  line-height: 1.5;
+.landing-action:focus-visible { outline: 3px solid #fff0cc; outline-offset: 6px; }
+
+.landing-action__seal {
+  display: grid;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: #f9e5bc;
+  background: radial-gradient(circle at 35% 30%, #bd4a3f, #7b1d25 70%);
+  border: 1px solid #c38862;
+  border-radius: 50%;
+  box-shadow: inset 0 1px 3px rgb(255 218 166 / 48%), 0 3px 8px rgb(51 14 17 / 32%);
+  font: 700 1.35rem Georgia, serif;
 }
 
 @media (min-width: 700px) {

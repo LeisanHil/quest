@@ -29,7 +29,7 @@ const dataPath = new URL('./src/quest-data.js', outputRoot);
 const mainPath = new URL('./src/main.js', outputRoot);
 const stylesPath = new URL('./src/styles.css', outputRoot);
 const landingStylesPath = new URL('./src/landing.css', outputRoot);
-const portraitPath = new URL('./public/polina-detective-barcelona.jpg', outputRoot);
+const portraitPath = new URL('./public/polina-detective-street.jpg', outputRoot);
 
 const dataVersion = hash(await readFile(dataPath));
 const mainSource = (await readFile(mainPath, 'utf8'))
@@ -38,7 +38,7 @@ await writeFile(mainPath, mainSource);
 
 const portraitVersion = hash(await readFile(portraitPath));
 const landingStyles = (await readFile(landingStylesPath, 'utf8'))
-  .replace('polina-detective-barcelona.jpg', `polina-detective-barcelona.jpg?v=${portraitVersion}`);
+  .replace('polina-detective-street.jpg', `polina-detective-street.jpg?v=${portraitVersion}`);
 await writeFile(landingStylesPath, landingStyles);
 
 const mainVersion = hash(mainSource);
