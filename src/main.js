@@ -30,7 +30,7 @@ function rules() {
   app.innerHTML = card(`${backHome}<p class="eyebrow">перед началом</p><h2>Немножко правил</h2><ol><li>Иди по порядку: следующая подсказка откроется после предыдущей.</li><li>Гуглить можно — это часть процесса.</li><li><strong>Не пользуйся искусственным интеллектом.</strong></li><li><strong>Не подглядывай в код страницы.</strong></li><li>Разреши геолокацию, когда сайт попросит: она подтвердит нужное место.</li></ol><button class="landing-action rules-action" data-action="start"><span class="landing-action__mark" aria-hidden="true">✦</span><span class="landing-action__label">Окей, поняла</span><span class="landing-action__arrow" aria-hidden="true">→</span></button>`, true);
 }
 function final() {
-  app.innerHTML = card(`${backHome}<div class="star" aria-hidden="true">♥</div><h1>${quest.final.title}</h1><p class="lead">${quest.final.message}</p>${quest.final.prizeUrl ? `<a class="primary" href="${quest.final.prizeUrl}" target="_blank" rel="noopener">Открыть подарок <b>↗</b></a>` : '<p class="note">Подарок появится здесь совсем скоро.</p>'}`);
+  app.innerHTML = card(`${backHome}<div class="star" aria-hidden="true">♥</div><h1>${quest.final.title}</h1><p class="lead">${quest.final.message}</p>`);
 }
 function previousButton() { return state.step ? '<button class="history-button" data-action="history">Посмотреть предыдущие загадки</button>' : ''; }
 function step() {
