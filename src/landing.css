@@ -84,6 +84,21 @@
   font: 1.5rem Georgia, serif;
 }
 
+.landing-resume {
+  display: block;
+  min-height: 44px;
+  margin: 10px 0 0;
+  padding: 8px 0;
+  color: #f0d9b5;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: 700 .78rem "Libre Baskerville", Georgia, serif;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.landing-resume:focus-visible { outline: 3px solid #fff0cc; outline-offset: 3px; }
+
 .rules-action { width: min(100%, 320px); margin-top: 0; }
 
 .primary {
